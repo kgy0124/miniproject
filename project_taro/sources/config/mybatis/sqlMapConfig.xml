@@ -7,8 +7,8 @@
 	<properties resource = "config/mybatis/db.properties"></properties>
 
 	<typeAliases>
-		<typeAlias alias="user" type="kr.co.board.domain.TaroUser" />
-		<typeAlias alias="card" type="kr.co.board.domain.TaroCard" />
+		<typeAlias alias="user" type="kr.co.taro.domain.TaroUser" />
+		<typeAlias alias="user" type="kr.co.taro.domain.TaroCard" />
 	</typeAliases>
 	
 	<environments default="development">
