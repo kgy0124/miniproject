@@ -54,7 +54,17 @@ public class TaroUserRegistUI extends BaseUI{
 			}
 			user.setPassword(pass);
 			
-			System.out.println(">> 회원등록중... <<");
+			// 회원 등록중 메시지에 대기시간을 주어 로딩하는 것처럼 표현하는 코드
+			System.out.println(">> 회원등록중 <<");
+			for (int i = 0; i < 3; i++) {
+				try {
+					Thread.sleep(500);
+					System.out.print(".");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.println();
 		
 			mapper.userInsert(user);
 		
