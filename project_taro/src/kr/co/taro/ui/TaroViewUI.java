@@ -2,7 +2,7 @@ package kr.co.taro.ui;
 
 import java.util.Scanner;
 
-public class CheckUI extends BaseUI {
+public class TaroViewUI extends BaseUI {
 	public void service() {
 		Scanner sc=new Scanner(System.in);
 		String ch="";

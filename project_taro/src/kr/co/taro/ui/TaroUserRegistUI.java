@@ -1,7 +1,5 @@
 package kr.co.taro.ui;
 
-import taro.ui.BaseUI;
-
 /**
  * 회원 등록 프로그램
  * @author eunj2n
