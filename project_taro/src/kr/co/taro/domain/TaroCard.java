@@ -5,39 +5,29 @@ public class TaroCard {
     private String cardId;
 
     // 정방향 이름 
-    private String nameUp;
-
-    // 역방향 이름 
-    private String nameDo;
+    private String cardName;
 
     // 기본설명 
     private String basicM;
 
     // 상세 설명 
     private String detailM;
+    
 
-    public String getCardId() {
+    public String getCardName() {
+		return cardName;
+	}
+
+	public void setCardName(String cardName) {
+		this.cardName = cardName;
+	}
+
+	public String getCardId() {
         return cardId;
     }
 
     public void setCardId(String cardId) {
         this.cardId = cardId;
-    }
-
-    public String getNameUp() {
-        return nameUp;
-    }
-
-    public void setNameUp(String nameUp) {
-        this.nameUp = nameUp;
-    }
-
-    public String getNameDo() {
-        return nameDo;
-    }
-
-    public void setNameDo(String nameDo) {
-        this.nameDo = nameDo;
     }
 
     public String getBasicM() {
