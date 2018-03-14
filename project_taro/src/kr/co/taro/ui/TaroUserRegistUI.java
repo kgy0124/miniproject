@@ -1,6 +1,7 @@
 package kr.co.taro.ui;
 
 import kr.co.taro.domain.TaroUser;
+import kr.co.taro.mapper.TaroUserMapper;
 
 /**
  * 회원 등록 프로그램
@@ -8,6 +9,11 @@ import kr.co.taro.domain.TaroUser;
  *
  */
 public class TaroUserRegistUI extends BaseUI{
+	private TaroUserMapper mapper;
+	
+	public TaroUserRegistUI(TaroUserMapper mapper) {
+		this.mapper = mapper;
+	}
 	
 	public void service() {
 		System.out.println("--------------------------");
@@ -21,13 +27,17 @@ public class TaroUserRegistUI extends BaseUI{
 		
 		user.setId(getStr(">> 사용하실 ID를 입력해주세요 : "));
 		user.setName(getStr(">> 이름을 입력해주세요 : "));
-		getInt(">> 생년월일을 입력해주세요 (ex 12341211) : ");
+		user.setBirth(getStr(">> 생년월일을 입력해주세요 (ex 12341211) : "));
 			// 숫자 8자리가 아닐시 되묻기
 			getInt(">> 생년월일을 양식에 맞게 입력해주세요  (ex 12341211) : ");
-		getStr(">> 설정하실 비밀번호를 입력해주세요 : ");
-		getStr(">> 비밀번호 재확인 : ");
+		user.setPassword(getStr(">> 설정하실 비밀번호를 입력해주세요 : "));
+		String respass = getStr(">> 비밀번호 재확인 : ");
+		if(user.getPassword() != respass) {
 			// 비밀번호가 같지 않을시 비밀번호 설정으로
-			getStr(">> 비밀번호 초기설정 화면으로 돌아갑니 <<");
+			System.out.println(">> 비밀번호 초기설정 화면으로 돌아갑니다 <<");
+			user.setPassword(getStr(">> 설정하실 비밀번호를 입력해주세요 : "));
+			
+		}
 		
 		System.out.println(">>회원 등록이 완료 되었습니다 <<");
 		
