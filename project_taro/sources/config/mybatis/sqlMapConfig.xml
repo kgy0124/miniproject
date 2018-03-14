@@ -8,7 +8,7 @@
 
 	<typeAliases>
 		<typeAlias alias="user" type="kr.co.taro.domain.TaroUser" />
-		<typeAlias alias="user" type="kr.co.taro.domain.TaroCard" />
+		<typeAlias alias="card" type="kr.co.taro.domain.TaroCard" />
 	</typeAliases>
 	
 	<environments default="development">
