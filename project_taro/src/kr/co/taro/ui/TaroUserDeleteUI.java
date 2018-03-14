@@ -16,6 +16,7 @@ public class TaroUserDeleteUI extends BaseUI{
 
 		// 회원확인
 		getStr(">> ID를 입력해주세요 : ");
+
 		getStr(">> 비밀번호를 입력해주세요 : ");
 		
 		// 틀린 정보일시..
