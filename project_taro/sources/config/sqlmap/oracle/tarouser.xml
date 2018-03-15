@@ -21,7 +21,7 @@
 	<select id="userIdSelect" parameterType="string" resultType="string">
 	select id
 	  from taro_user
-	 where #{id}
+	 where id = #{id}
 	</select>
 	
 	
