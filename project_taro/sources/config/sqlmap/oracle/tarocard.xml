@@ -16,6 +16,15 @@
 		  from taro_love
 	</select>
 	
+	<select id = 'selectTaroCardMoney' resultMap="cardMap">
+		select *
+		  from taro_money
+	</select>
+	
+	<select id = 'selectTaroCardHealth' resultMap="cardMap">
+		select *
+		  from taro_health
+	</select>
 
 	
 </mapper>

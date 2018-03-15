@@ -7,5 +7,7 @@ import kr.co.taro.domain.TaroCard;
 public interface TaroCardMapper {
 
 	List<TaroCard> selectTaroCardLove();
+	List<TaroCard> selectTaroCardMoney();
+	List<TaroCard> selectTaroCardHealth();
 	
 }
