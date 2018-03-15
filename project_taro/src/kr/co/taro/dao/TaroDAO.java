@@ -9,7 +9,7 @@ public class TaroDAO extends TaroUI{
 
 	// ID 중복확인
 	public boolean idCheck(String userId) {
-		String result = mapper.userIdSelect(userId);
+		String result = userMapper.userIdSelect(userId);
 		if(result == null) {
 			return true;
 		} 

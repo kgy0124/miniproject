@@ -25,5 +25,6 @@
 
 	<mappers>
 		<mapper resource="config/sqlmap/oracle/tarouser.xml"/>
+		<mapper resource="config/sqlmap/oracle/tarocard.xml"/>
 	</mappers>
 </configuration>

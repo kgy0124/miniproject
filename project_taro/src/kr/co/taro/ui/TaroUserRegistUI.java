@@ -50,7 +50,7 @@ public class TaroUserRegistUI extends BaseUI{
 		
 		new TaroPasswordCheckUI().service();
 			
-		TaroDAO.mapper.userInsert(TaroDAO.user);
+		TaroDAO.userMapper.userInsert(TaroDAO.user);
 			
 		System.out.print(">> 회원등록중");
 		for (int i = 0; i < 3; i++) {
