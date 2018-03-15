@@ -39,7 +39,17 @@
 	<delete id="userDelete" parameterType="string">
 	delete taro_user
 	 where id = #{id}
-	
 	</delete>
 	
+	<select id="loadInfo" parameterType="user" resultType="user"> 
+	select * from taro_user 
+	 where id= #{id} 
+	   and password= #{password} 
+	</select>
+
+    <update id="updateStatus" parameterType="String"> 
+    update taro_user 
+       set status=1 
+      where id= #{id} 
+    </update>
 </mapper>
