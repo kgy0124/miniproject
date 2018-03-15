@@ -1,5 +1,6 @@
 package kr.co.taro.ui.tarouserui;
 
+import kr.co.taro.dao.TaroDAO;
 import kr.co.taro.domain.TaroUser;
 import kr.co.taro.ui.BaseUI;
 import kr.co.taro.ui.TaroUI;
@@ -20,7 +21,7 @@ public class TaroPasswordCheckUI extends BaseUI{
 			
 			if(result) {
 				System.out.println("\n>> 비밀번호가 확인되었습니다 <<\n");
-				usertmp.setPassword(password);
+				TaroDAO.user.setPassword(password);
 				return;
 			} else {
 				System.out.println("\n>> 올바르지 않은 비밀번호를 입력하셨습니다 <<");

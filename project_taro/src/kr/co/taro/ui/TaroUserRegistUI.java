@@ -44,14 +44,13 @@ public class TaroUserRegistUI extends BaseUI{
 		}
 		new TaroUserIdCheckUI().service();
 		
-		user.setName(getStr(">> 이름을 입력해주세요 : "));
+		TaroDAO.user.setName(getStr(">> 이름을 입력해주세요 : "));
 		
 		new TaroBirthCheckUI().service();	
 		
 		new TaroPasswordCheckUI().service();
-		TaroPasswordCheckUI.usertmp.getPassword();
 			
-		TaroDAO.mapper.userInsert(user);
+		TaroDAO.mapper.userInsert(TaroDAO.user);
 			
 		System.out.print(">> 회원등록중");
 		for (int i = 0; i < 3; i++) {
@@ -63,7 +62,7 @@ public class TaroUserRegistUI extends BaseUI{
 			}
 		}
 		
-		System.out.println(">>회원 등록이 완료 되었습니다 <<");
+		System.out.println("\n\n>>회원 등록이 완료 되었습니다 <<\n");
 		return;
 	}
 			
