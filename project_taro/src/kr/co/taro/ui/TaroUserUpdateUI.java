@@ -13,7 +13,12 @@ public class TaroUserUpdateUI extends BaseUI{
 		System.out.println(">> 회원정보 수정을 선택하셨습니다 <<");
 		System.out.println("--------------------------");
 		
-		getStr(">> 회원정보 수정을 하시겠습니까 ( Y : 회원정보 수정 / N : 메뉴로 돌아가기 ) : ");
+		String result = "";
+		result = getStr(">> 회원정보 수정을 하시겠습니까 ( Y : 회원등록 / N : 메뉴로 돌아가기 ) : ");
+		if(result.equalsIgnoreCase("N")) {
+			System.out.println(">> 메뉴로 돌아갑니다 <<");
+			return;
+		} else if(result.equalsIgnoreCase("Y")) {
 		
 		//회원확인
 		getStr(">> ID를 입력해주세요 : ");
@@ -46,7 +51,7 @@ public class TaroUserUpdateUI extends BaseUI{
 			return;
 		}
 		
-		
+		}
 		
 		
 	}

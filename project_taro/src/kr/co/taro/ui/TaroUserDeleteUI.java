@@ -12,8 +12,13 @@ public class TaroUserDeleteUI extends BaseUI{
 		System.out.println(">> 회원탈퇴를 선택하셨습니다 <<");
 		System.out.println("--------------------------");
 		
-		getStr(">> 회원탈퇴를 하시겠습니까 ( Y : 회원탈퇴 / N : 메뉴로 돌아가기 ) : ");
-
+		String result = "";
+		result = getStr(">> 회원등록을 하시겠습니까 ( Y : 회원등록 / N : 메뉴로 돌아가기 ) : ");
+		if(result.equalsIgnoreCase("N")) {
+			System.out.println(">> 메뉴로 돌아갑니다 <<");
+			return;
+		} else if(result.equalsIgnoreCase("Y")) {
+		
 		// 회원확인
 		getStr(">> ID를 입력해주세요 : ");
 
@@ -32,6 +37,6 @@ public class TaroUserDeleteUI extends BaseUI{
 		
 		// N선택시
 		System.out.println(">> 메뉴로 돌아갑니다 <<");
-		
+		}
 	}
 }
