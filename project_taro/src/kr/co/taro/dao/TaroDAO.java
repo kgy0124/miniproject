@@ -6,7 +6,6 @@ import kr.co.taro.ui.TaroUI;
 public class TaroDAO extends TaroUI{
 	public static TaroUser user = new TaroUser();
 
-
 	// ID 중복확인
 	public boolean idCheck(String userId) {
 		String result = userMapper.userIdSelect(userId);

@@ -1,6 +1,5 @@
 package kr.co.taro.ui.tarouserui;
 
-import kr.co.taro.dao.TaroDAO;
 import kr.co.taro.ui.TaroUI;
 import kr.co.taro.ui.TaroUserRegistUI;
 
@@ -21,7 +20,7 @@ public class TaroBirthCheckUI extends TaroUserRegistUI{
 			boolean result = TaroUI.dao.birthResult(birth);
 			if(result) {
 				System.out.println("\n\n>> 확인 되었습니다 <<\n");
-				TaroDAO.user.setBirth(birth);	
+				TaroUI.usertmp.setBirth(birth);
 				return;
 			} else {
 				System.out.println("\n>> 생년월일을 양식에 맞게 입력해주세요 <<");
