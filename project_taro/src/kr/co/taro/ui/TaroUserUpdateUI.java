@@ -40,7 +40,10 @@ public class TaroUserUpdateUI extends BaseUI{
 		getStr(">> 비밀번호를 입력해주세요 : ");
 		while(true) {
 			switch(getInt(">> 수정할 정보를 선택해주세요 ( 1. 생년월일 / 2. 비밀번호 ) : ")) {
-			case 1 : new TaroBirthCheckUI().service(); break;
+			case 1 : new TaroBirthCheckUI().service(); 
+					 String msg = TaroUI.usertmp.getBirth();
+					
+			break;
 			case 2 : new TaroPasswordCheckUI(); break;
 			}
 		}

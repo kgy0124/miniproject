@@ -11,4 +11,8 @@ public interface TaroUserMapper {
 	TaroUser loadInfo(TaroUser user);
 	
 	void updateStatus(String userId);
+	
+	void userBirthUpdate(String birth);
+	
+	void userPasswordUpdate(String password);
 }
