@@ -1,5 +1,7 @@
 package kr.co.taro.ui;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -70,13 +72,39 @@ public class TaroNonViewUI extends BaseUI{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.print("\n1~44 중 마음에 드는 카드를 선택해 주세요^0^ ");
-		int cardnum = Integer.parseInt(sc.nextLine());
 		
 		// 카드해석 불러오기
 		List<TaroCard> list = TaroUI.cardMapper.selectTaroCardLove();
+		Collections.shuffle(list);
+		
+		int cardnum =0;
+		while(true) {
+			System.out.print("원하는 카드 번호를 선택하세요(1 ~ 44) : ");
+			cardnum = Integer.parseInt(sc.nextLine());
+			
+			if (cardnum > 44 && cardnum < 1) {
+				System.out.println("없는 카드입니다... 다시 집중하고 골라주세요.");
+				continue;
+			} 
+			break;
+		}
+		
+		TaroCard resultnum = list.get(cardnum-1);
+		System.out.println(resultnum.getCardName());
+		System.out.println(resultnum.getBasicM());
+		System.out.println(resultnum.getDetailM());
 		
 		
-	}		
+		
+	}	
+	
+	
+	
+	
+	
 }
+
+
+
+
 	
