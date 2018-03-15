@@ -11,5 +11,11 @@
 		<result column="detail_m" property="detailM"/>
 	</resultMap>
 
+	<select id = 'selectTaroCardLove' resultMap="cardMap">
+		select *
+		  from taro_love
+	</select>
+	
+
 	
 </mapper>

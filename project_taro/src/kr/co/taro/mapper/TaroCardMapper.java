@@ -1,5 +1,11 @@
 package kr.co.taro.mapper;
 
-public class TaroCardMapper {
+import java.util.List;
 
+import kr.co.taro.domain.TaroCard;
+
+public interface TaroCardMapper {
+
+	List<TaroCard> selectTaroCardLove();
+	
 }
