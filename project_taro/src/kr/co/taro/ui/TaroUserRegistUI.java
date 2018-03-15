@@ -42,17 +42,28 @@ public class TaroUserRegistUI extends BaseUI{
 			String userId = "";
 			while(true) {
 				userId = (getStr(">> 사용하실 ID를 입력해주세요 : "));
+				System.out.print(">> ID 중복 확인중 입니다");
 				String idResult = mapper.userIdSelect(userId);
+				for (int i = 0; i < 3; i++) {
+					try {
+						Thread.sleep(500);
+						System.out.print(".");
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
 				if(idResult == null) {
-					System.out.println(">> 사용 가능한 ID입니다 <<");
+					System.out.println();
+					System.out.println("\n>> 사용 가능한 ID입니다 <<");
+					System.out.println();
 					break;
 				}
-				System.out.println(">> 이미 가입된 ID입니다 <<");
+				System.out.println();
+				System.out.println("\n>> 이미 가입된 ID입니다 <<");
+				System.out.println();
 				continue;
 			}
 			user.setId(userId);
-				
-			
 			
 			user.setName(getStr(">> 이름을 입력해주세요 : "));
 
@@ -98,5 +109,5 @@ public class TaroUserRegistUI extends BaseUI{
 		
 		
 			System.out.println(">>회원 등록이 완료 되었습니다 <<");
-	}
+		}
 }
