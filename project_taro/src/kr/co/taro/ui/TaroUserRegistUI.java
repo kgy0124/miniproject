@@ -9,6 +9,7 @@ import kr.co.taro.mapper.TaroUserMapper;
  *
  */
 public class TaroUserRegistUI extends BaseUI{
+	private TaroUser user = new TaroUser();
 	private TaroUserMapper mapper;
 	
 	public TaroUserRegistUI(TaroUserMapper mapper) {
@@ -16,6 +17,34 @@ public class TaroUserRegistUI extends BaseUI{
 	}
 	
 	public void service() {
+		while(true) {
+			menu();
+			idReg();
+			
+			user.setName(getStr(">> 이름을 입력해주세요 : "));
+			System.out.println();
+			
+			birthReg();
+			passwordReg();
+			
+			mapper.userInsert(user);
+			// 회원 등록중 메시지에 대기시간을 주어 로딩하는 것처럼 표현하는 코드
+			System.out.print(">> 회원등록중");
+			for (int i = 0; i < 3; i++) {
+				try {
+					Thread.sleep(500);
+					System.out.print(".");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.println();
+			System.out.println(">>회원 등록이 완료 되었습니다 <<");
+			return;
+			}
+		}
+			
+	private void menu() {
 		System.out.println("--------------------------");
 		System.out.println(">> 회원등록을 선택하셨습니다 <<");
 		System.out.println("--------------------------");
@@ -37,66 +66,14 @@ public class TaroUserRegistUI extends BaseUI{
 			System.out.println();
 			continue;
 		}
-			TaroUser user = new TaroUser();
-		
-			String userId = "";
-			while(true) {
-				userId = (getStr(">> 사용하실 ID를 입력해주세요 : "));
-				System.out.print(">> ID 중복 확인중 입니다");
-				String idResult = mapper.userIdSelect(userId);
-				for (int i = 0; i < 3; i++) {
-					try {
-						Thread.sleep(500);
-						System.out.print(".");
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-				if(idResult == null) {
-					System.out.println();
-					System.out.println("\n>> 사용 가능한 ID입니다 <<");
-					System.out.println();
-					break;
-				}
-				System.out.println();
-				System.out.println("\n>> 이미 가입된 ID입니다 <<");
-				System.out.println();
-				continue;
-			}
-			user.setId(userId);
-			
-			user.setName(getStr(">> 이름을 입력해주세요 : "));
-
-			String birth = "";
-			while(true) {
-				birth = getStr(">> 생년월일을 입력해주세요 (ex 12341211) : ");
-				if(birth.length() != 8) {
-					System.out.println();
-					System.out.println(">> 생년월일을 양식에 맞게 입력해주세요 <<");
-					System.out.println();
-				} else break;
-			}
-			user.setBirth(birth);	
-			
-			String pass = "";
-			while(true) {
-				pass = (getStr(">> 생성하실 비밀번호를 입력해주세요 : "));
-				String respass = getStr(">> 비밀번호 재확인 : ");
-				if(pass.equals(respass)) {
-					System.out.println(">> 비밀번호가 확인되었습니다 <<");
-				} else {
-					System.out.println(">> 올바르지 않은 비밀번호를 입력하셨습니다 <<");
-					System.out.println(">> 비밀번호 초기설정 화면으로 돌아갑니다 <<");
-					continue;
-				}
-				break;
-				
-			}	
-			user.setPassword(pass);
-			
-			mapper.userInsert(user);
-			// 회원 등록중 메시지에 대기시간을 주어 로딩하는 것처럼 표현하는 코드
-			System.out.println(">> 회원등록중 <<");
+	}
+	
+	private void idReg() {
+		String userId = "";
+		while(true) {
+			userId = (getStr(">> 사용하실 ID를 입력해주세요 : "));
+			System.out.print(">> ID 중복 확인중 입니다");
+			String idResult = mapper.userIdSelect(userId);
 			for (int i = 0; i < 3; i++) {
 				try {
 					Thread.sleep(500);
@@ -105,9 +82,83 @@ public class TaroUserRegistUI extends BaseUI{
 					e.printStackTrace();
 				}
 			}
+			if(idResult == null) {
+				System.out.println();
+				System.out.println("\n>> 사용 가능한 ID입니다 <<");
+				System.out.println();
+				break;
+			}
 			System.out.println();
-		
-		
-			System.out.println(">>회원 등록이 완료 되었습니다 <<");
+			System.out.println("\n>> 이미 가입된 ID입니다 <<");
+			System.out.println();
+			continue;
 		}
+		user.setId(userId);
+	}
+	
+	private void birthReg() {
+		String birth = "";
+		while(true) {
+			birth = getStr(">> 생년월일을 입력해주세요 (ex 12341211) : ");
+			System.out.println();
+			System.out.print(">> 생년월일 확인 중");
+			for (int i = 0; i < 3; i++) {
+				try {
+					Thread.sleep(300);
+					System.out.print(".");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.println();
+			if(birth.length() == 8 && isNumber(birth)) {
+					System.out.println("\n>> 확인 되었습니다 <<");
+					System.out.println();
+					break;
+			} else {
+				System.out.println();
+				System.out.println(">> 생년월일을 양식에 맞게 입력해주세요 <<");
+				System.out.println();
+				continue;
+			}
+		}
+		user.setBirth(birth);	
+	}
+	
+	private void passwordReg() {
+		String pass = "";
+		while(true) {
+			pass = (getStr(">> 생성하실 비밀번호를 입력해주세요 : "));
+			String respass = getStr(">> 비밀번호 재확인 : ");
+			if(pass.equals(respass)) {
+				System.out.println();
+				System.out.println(">> 비밀번호가 확인되었습니다 <<");
+				System.out.println();
+			} else {
+				System.out.println();
+				System.out.println(">> 올바르지 않은 비밀번호를 입력하셨습니다 <<");
+				System.out.println(">> 비밀번호 초기설정 화면으로 돌아갑니다 <<");
+				System.out.println();
+				continue;
+			}
+			break;
+		}	
+		user.setPassword(pass);
+	}
+	
+	public static boolean isNumber(String msg) {
+        if( msg == null || msg.equals("") ) {
+            return false;
+        }
+        for( int i = 0 ; i < msg.length() ; i++ ) {
+            char ch = msg.charAt(i);
+            if(ch < '0' || ch > '9') {
+                return false;
+            }
+        }
+        return true;
+    }
+	
 }
+	
+
