@@ -1,10 +1,13 @@
 package kr.co.taro.domain;
 
 public class TaroCard {
-	 // 식별자 
-    private String cardId;
+	// 식별자 
+    private String listId;
+    
+    // 카드 번호
+    private int no;
 
-    // 정방향 이름 
+	// 정방향 이름 
     private String cardName;
 
     // 기본설명 
@@ -13,6 +16,22 @@ public class TaroCard {
     // 상세 설명 
     private String detailM;
     
+    
+    public String getListId() {
+		return listId;
+	}
+
+	public void setListId(String listId) {
+		this.listId = listId;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
 
     public String getCardName() {
 		return cardName;
@@ -21,14 +40,6 @@ public class TaroCard {
 	public void setCardName(String cardName) {
 		this.cardName = cardName;
 	}
-
-	public String getCardId() {
-        return cardId;
-    }
-
-    public void setCardId(String cardId) {
-        this.cardId = cardId;
-    }
 
     public String getBasicM() {
         return basicM;

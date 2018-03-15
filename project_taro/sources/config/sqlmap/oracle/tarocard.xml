@@ -3,7 +3,13 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
 <mapper namespace="kr.co.taro.mapper.TaroCardMapper">
-	
+	<resultMap type="card" id="cardMap">
+		<result column="list_id" property="listId"/>
+		<result column="no" property="no"/>
+		<result column="card_name" property="cardName"/>
+		<result column="basic_m" property="basicM"/>
+		<result column="detail_m" property="detailM"/>
+	</resultMap>
 
 	
 </mapper>
