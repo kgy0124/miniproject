@@ -24,5 +24,22 @@
 	 where id = #{id}
 	</select>
 	
+	<update id="userBirthUpdate" parameterType="string">
+	update taro_user
+	   set birth = #{birth}
+	 where 
+	</update>
+	
+	<update id="userPasswordUpdate" parameterType="string">
+	update taro_user
+	   set password = #{password}
+	 where 
+	</update>	
+
+	<delete id="userDelete" parameterType="string">
+	delete taro_user
+	 where id = #{id}
+	
+	</delete>
 	
 </mapper>
