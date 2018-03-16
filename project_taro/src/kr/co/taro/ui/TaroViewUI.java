@@ -25,16 +25,16 @@ public class TaroViewUI extends BaseUI {
 	}
 	
 	public int menu() {
-		System.out.println("=======================================");
-		System.out.println("|            [회원 전용 타로 운세]            |");
-		System.out.println("=======================================");
+		System.out.println("==================================================================");
+		System.out.println("                         [회원 전용 타로 운세]                        ");
+		System.out.println("------------------------------------------------------------------\n");
 		if (TaroUI.usertmp == null) System.out.println("1. 유저 로그인");
-		else System.out.println("1. 유저 로그 아웃");
-		System.out.println("2. 기존 운세 보기");
+		else System.out.println("1. 유저 로그아웃");
+		System.out.println("2. 저장된 운세 기록 보기");
 		System.out.println("3. 새로운 운세 보기");
 		System.out.println("0. 메인으로 돌아가기");
-		System.out.println("=======================================");
-		System.out.print(">> 메뉴 입력 : ");
+		System.out.println("------------------------------------------------------------------");
+		System.out.print(">> 원하시는 메뉴의 번호를 입력해주세요 : ");
 		return Integer.parseInt(sc.nextLine());
 	}
 }
