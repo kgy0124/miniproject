@@ -10,13 +10,13 @@ public interface TaroUserMapper {
 	
 	TaroUser loadInfo(TaroUser user);
 	
-	void logInStatus(String userId);
+//	void logInStatus(String userId);
 	
 	void userBirthUpdate(TaroUser user);
 	
 	void userPasswordUpdate(TaroUser user);
 	
-	void logOutStatus(String userId);
+//	void logOutStatus(String userId);
 
 	void userDelete(String userId);
 }

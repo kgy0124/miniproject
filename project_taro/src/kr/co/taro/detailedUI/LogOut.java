@@ -6,11 +6,12 @@ import kr.co.taro.ui.TaroUI;
 public class LogOut extends BaseUI {
 
 	public void service() {
+		System.out.println("==============================================");
 		System.out.println("로그 아웃 하시겠습니까 (Y/N)");
 		String ch=sc.nextLine();
 		
 		if(ch.equalsIgnoreCase("Y")) {
-			TaroUI.userMapper.logOutStatus(TaroUI.usertmp.getId());
+			TaroUI.usertmp = null;
 			System.out.println("로그아웃 되었습니다.");
 		}else if(ch.equalsIgnoreCase("N")) {
 			System.out.println("메뉼로 돌아갑니다.");
@@ -20,9 +21,6 @@ public class LogOut extends BaseUI {
 			System.out.println("올바른 값이 아닙니다.");
 			return;
 		}
-	
 	}
-	
-
 
 }

@@ -47,15 +47,16 @@
 	   and password= #{password} 
 	</select>
 
-    <update id="logInStatus" parameterType="String"> 
-    update taro_user 
-       set status=1 
-      where id= #{id} 
-    </update>
+
+<!--     <update id="logInStatus" parameterType="String">  -->
+<!--     update taro_user  -->
+<!--        set status=1  -->
+<!--       where id= #{id}  -->
+<!--     </update> -->
     
-    <update id="logOutStatus" parameterType="String"> 
-    update taro_user 
-       set status=0 
-      where id= #{id} 
-    </update>
+<!--     <update id="logOutStatus" parameterType="String">  -->
+<!--     update taro_user  -->
+<!--        set status=0  -->
+<!--       where id= #{id}  -->
+<!--     </update> -->
 </mapper>
