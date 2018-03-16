@@ -23,6 +23,18 @@ public class LoginCheck extends BaseUI{
 			user.setPassword(password);
 					
 			user=TaroUI.userMapper.loadInfo(user);
+			
+			System.out.print(">> 회원 정보를 확인하고 있습니다");
+			
+			for (int i = 0; i < 3; i++) {
+				try {
+					Thread.sleep(1000);;
+					System.out.print(".");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
 			if(user==null) {
 				System.out.println("일치하는 아이디,비밀번호가 존재하지 않습니다.");
 				continue;
