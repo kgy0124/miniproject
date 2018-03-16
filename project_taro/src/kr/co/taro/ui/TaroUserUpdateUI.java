@@ -1,5 +1,6 @@
 package kr.co.taro.ui;
 
+import kr.co.taro.detailedUI.LoginCheck;
 import kr.co.taro.ui.tarouserui.TaroBirthCheckUI;
 import kr.co.taro.ui.tarouserui.TaroPasswordCheckUI;
 
@@ -34,17 +35,21 @@ public class TaroUserUpdateUI extends BaseUI{
 			}
 		}
 		
+		LoginCheck login = new LoginCheck();
+		login.service();
 		
-		//회원확인
-		getStr(">> ID를 입력해주세요 : ");
-		getStr(">> 비밀번호를 입력해주세요 : ");
 		while(true) {
-			switch(getInt(">> 수정할 정보를 선택해주세요 ( 1. 생년월일 / 2. 비밀번호 ) : ")) {
+			switch(getInt(">> 수정할 정보를 선택해주세요 ( 1. 생년월일 / 2. 비밀번호 / 3. 메뉴로 돌아가기 ) : ")) {
 			case 1 : new TaroBirthCheckUI().service(); 
-					 String msg = TaroUI.usertmp.getBirth();
-					
-			break;
-			case 2 : new TaroPasswordCheckUI(); break;
+					TaroUI.userMapper.userBirthUpdate(TaroUI.usertmp);
+					System.out.println(">> 수정이 정상적으로 완료되었습니다 <<\n");
+					break;
+			case 2 : new TaroPasswordCheckUI().service();
+					TaroUI.userMapper.userPasswordUpdate(TaroUI.usertmp);
+					System.out.println(">> 수정이 정상적으로 완료되었습니다 <<\n");
+					break;
+			case 3 : System.out.println(">> 메뉴로 돌아갑니다 <<");
+					return;
 			}
 		}
 		

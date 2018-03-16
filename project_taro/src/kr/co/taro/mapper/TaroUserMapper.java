@@ -12,9 +12,11 @@ public interface TaroUserMapper {
 	
 	void logInStatus(String userId);
 	
-	void userBirthUpdate(String birth);
+	void userBirthUpdate(TaroUser user);
 	
-	void userPasswordUpdate(String password);
+	void userPasswordUpdate(TaroUser user);
 	
 	void logOutStatus(String userId);
+
+	void userDelete(String userId);
 }

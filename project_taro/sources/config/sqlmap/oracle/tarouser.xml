@@ -24,16 +24,16 @@
 	 where id = #{id}
 	</select>
 	
-	<update id="userBirthUpdate" parameterType="string">
+	<update id="userBirthUpdate" parameterType="user">
 	update taro_user
 	   set birth = #{birth}
-	 where 
+	 where id = #{id}
 	</update>
 	
-	<update id="userPasswordUpdate" parameterType="string">
+	<update id="userPasswordUpdate" parameterType="user">
 	update taro_user
 	   set password = #{password}
-	 where 
+	 where id = #{id}
 	</update>	
 
 	<delete id="userDelete" parameterType="string">
