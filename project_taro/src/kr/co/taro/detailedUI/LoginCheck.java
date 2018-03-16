@@ -28,7 +28,7 @@ public class LoginCheck extends BaseUI{
 			}
 
 			System.out.println(user.getName() +"님 환영합니다.");
-			TaroUI.userMapper.updateStatus(user.getId());
+			TaroUI.userMapper.logInStatus(user.getId());
 		
 			break;
 			}
