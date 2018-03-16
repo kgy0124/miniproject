@@ -16,6 +16,7 @@ public class LoginCheck extends BaseUI{
 			System.out.print("아이디를 입력하십시오:");
 			String id=sc.nextLine();
 			user.setId(id);
+			TaroUI.usertmp.setId(id);
 			
 			System.out.print("패스워드를 입력하십시오:");
 			String password=sc.nextLine();
@@ -32,6 +33,6 @@ public class LoginCheck extends BaseUI{
 		
 			break;
 			}
+		}
 	}
 
-	}

@@ -64,10 +64,16 @@ public class TaroUserDeleteUI extends BaseUI{
 						e.printStackTrace();
 					}
 				}
+				System.out.println();
+				System.out.println("---------------------------------------");
+				System.out.println(">>       정상적으로 탈퇴 처리가 되었습니다               <<");
+				System.out.println("---------------------------------------");
 				TaroUI.userMapper.userDelete(userId);
 				break;
 			} else {
-				System.out.println(">> 올바른 값이 아닙니다. 다시 입력해주세요 <<");
+				System.out.println("---------------------------------------");
+				System.out.println(">>     올바른 값이 아닙니다. 다시 입력해주세요        <<");
+				System.out.println("---------------------------------------");
 				continue;
 			}
 		}

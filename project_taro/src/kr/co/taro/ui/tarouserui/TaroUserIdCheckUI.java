@@ -17,14 +17,19 @@ public class TaroUserIdCheckUI extends BaseUI {
 					e.printStackTrace();
 				}
 			}
+			System.out.println();
 			boolean result = TaroUI.dao.idCheck(userId);
 			
 			if(result) {
-				System.out.println("\n\n>> !!사용 가능한 ID입니다!! <<\n");
+				System.out.println("---------------------------------------");
+				System.out.println(">>         사용 가능한 ID입니다                           <<");
+				System.out.println("---------------------------------------");
 				TaroUI.usertmp.setId(userId);
 				return;
 			} else {
-				System.out.println("\n\n>> !!이미 가입된 ID입니다!! <<\n");
+				System.out.println("---------------------------------------");
+				System.out.println(">>         이미 가입된 ID입니다                           <<");
+				System.out.println("---------------------------------------");
 				continue;
 			}
 		}
