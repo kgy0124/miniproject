@@ -13,11 +13,11 @@ public class TaroViewUI extends BaseUI {
 		BaseUI ui = null;		
 		while(true) {
 			switch(menu()) {
-			case 1:if(TaroUI.usertmp==null)
+			case 1:if(TaroUI.usertmp.getId() == null)
 				   ui=new LoginCheck();
 				   else ui=new LogOut();break;
 			case 2:break;
-			case 3:new TaroSaveUI().service();break;
+			case 3: ui = new TaroSaveUI(); break;
 			case 0: return;
 			}
 			ui.service();
@@ -28,7 +28,7 @@ public class TaroViewUI extends BaseUI {
 		System.out.println("==================================================================");
 		System.out.println("                         [회원 전용 타로 운세]                        ");
 		System.out.println("------------------------------------------------------------------\n");
-		if (TaroUI.usertmp == null) System.out.println("1. 유저 로그인");
+		if (TaroUI.usertmp.getId() == null) System.out.println("1. 유저 로그인");
 		else System.out.println("1. 유저 로그아웃");
 		System.out.println("2. 저장된 운세 기록 보기");
 		System.out.println("3. 새로운 운세 보기");

@@ -12,7 +12,9 @@ public class RealTaroViewUI extends BaseUI{
 	public void service() { 
 		TaroUser ts = new TaroUser(); 
 		System.out.println(">> 타로를 진행 하겠습니다 <<");
-		ts.setName(getStr(">> 당신의 이름은? : "));
+		if (TaroUI.usertmp.getName() != null) {
+			ts.setName(TaroUI.usertmp.getName());
+		} else ts.setName(getStr(">> 당신의 이름은? : "));
 		System.out.println("------------------------------------------------------------------");
 		System.out.println("   	    	[" + ts.getName() + "]님! 어떤 운세를 보시겠습니까?         ");
 		System.out.println("------------------------------------------------------------------");
@@ -37,8 +39,8 @@ public class RealTaroViewUI extends BaseUI{
 			list = TaroUI.cardMapper.selectTaroCardMoney();
 			break;
 		case 3: 
-			System.out.println(">> [건강운]을 선택하셨습니다  <<");
-			System.out.println(">> [건강운] 타로 보기를 시작합니다  <<");
+			System.out.println(">> [금전운]을 선택하셨습니다  <<");
+			System.out.println(">> [금전운] 타로 보기를 시작합니다  <<");
 			list = TaroUI.cardMapper.selectTaroCardHealth();
 			break;
 		}
@@ -89,7 +91,6 @@ public class RealTaroViewUI extends BaseUI{
 			System.out.println(">> 상세 해석 : " + resultnum.getDetailM());
 			Thread.sleep(1500);
 			System.out.println();
-			System.out.println("------------------------------------------------------------------");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,6 +1,7 @@
 package kr.co.taro.ui;
 
 import kr.co.taro.detailedUI.LoginCheck;
+import kr.co.taro.domain.TaroUser;
 
 /**
  * 회원 탈퇴 프로그램
@@ -69,6 +70,7 @@ public class TaroUserDeleteUI extends BaseUI{
 				System.out.println(".......................................\n");
 				TaroUI.userMapper.userDelete(userId);
 				TaroUI.usertmp = null;
+				TaroUI.usertmp = new TaroUser();
 				break;
 			} else {
 				System.out.println(".......................................");

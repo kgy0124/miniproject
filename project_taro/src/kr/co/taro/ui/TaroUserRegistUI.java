@@ -1,5 +1,6 @@
 package kr.co.taro.ui;
 
+import kr.co.taro.domain.TaroUser;
 import kr.co.taro.ui.tarouserui.TaroBirthCheckUI;
 import kr.co.taro.ui.tarouserui.TaroPasswordCheckUI;
 import kr.co.taro.ui.tarouserui.TaroUserIdCheckUI;
@@ -59,6 +60,8 @@ public class TaroUserRegistUI extends BaseUI{
 			
 		TaroUI.userMapper.userInsert(TaroUI.usertmp);
 		
+		TaroUI.usertmp = null;
+		TaroUI.usertmp = new TaroUser();
 		System.out.println();
 			
 		System.out.print(">> 회원등록중");
