@@ -7,8 +7,8 @@ public class TaroBirthCheckUI extends TaroUserRegistUI{
 	
 	public void service() {
 		while(true) {
-			String birth = getStr("\n>> 생년월일을 입력해주세요 (ex 12341211) : ");
-			System.out.print("\n>> 생년월일 확인 중");
+			String birth = getStr(">> 생년월일을 입력해주세요 (ex 12341211) : ");
+			System.out.print(">> 생년월일 확인 중");
 			for (int i = 0; i < 3; i++) {
 				try {
 					Thread.sleep(300);
@@ -17,13 +17,15 @@ public class TaroBirthCheckUI extends TaroUserRegistUI{
 					e.printStackTrace();
 				}
 			}
+			System.out.println();
 			boolean result = TaroUI.dao.birthResult(birth);
 			if(result) {
-				System.out.println("\n\n>> 확인 되었습니다 <<\n");
 				TaroUI.usertmp.setBirth(birth);
 				return;
 			} else {
-				System.out.println("\n>> 생년월일을 양식에 맞게 입력해주세요 <<");
+				System.out.println(".......................................");
+				System.out.println(">>      생년월일을 양식에 맞게 입력해주세요             <<");
+				System.out.println(".......................................");
 				continue;
 			}
 		}

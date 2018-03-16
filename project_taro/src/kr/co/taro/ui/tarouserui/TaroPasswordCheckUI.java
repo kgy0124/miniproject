@@ -13,12 +13,13 @@ public class TaroPasswordCheckUI extends BaseUI{
 			boolean result = TaroUI.dao.passwordResult(password, respass);
 			
 			if(result) {
-				System.out.println("\n>> 비밀번호가 확인되었습니다 <<\n");
 				TaroUI.usertmp.setPassword(password);
 				return;
 			} else {
-				System.out.println("\n>> 올바르지 않은 비밀번호를 입력하셨습니다 <<");
-				System.out.println(">> 비밀번호 초기설정 화면으로 돌아갑니다 <<\n");
+				System.out.println(".......................................");
+				System.out.println(">>    올바르지 않은 비밀번호를 입력하셨습니다            <<");
+				System.out.println(">>     비밀번호 초기설정 화면으로 돌아갑니다             <<");
+				System.out.println(".......................................");
 				continue;
 			}
 		}
