@@ -6,18 +6,21 @@ import common.db.MyAppConfig;
 import kr.co.taro.dao.TaroDAO;
 import kr.co.taro.domain.TaroUser;
 import kr.co.taro.mapper.TaroCardMapper;
+import kr.co.taro.mapper.TaroUserDbMapper;
 import kr.co.taro.mapper.TaroUserMapper;
 
 public class TaroUI {
 	private TaroMainUI m = new TaroMainUI();
     public static TaroUserMapper userMapper;
     public static TaroCardMapper cardMapper;
+    public static TaroUserDbMapper dbMapper;
     public static TaroUser usertmp = new TaroUser();
     public static TaroDAO dao = new TaroDAO();
     public TaroUI() {
 		SqlSession sql = MyAppConfig.getSqlSessionInstance();
 		userMapper = sql.getMapper(TaroUserMapper.class);
 		cardMapper = sql.getMapper(TaroCardMapper.class);
+		dbMapper   = sql.getMapper(TaroUserDbMapper.class);
 	}
 	
 	public void service() {

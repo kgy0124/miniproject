@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kr.co.taro.mapper.TaroUserDbMapper">
+    <resultMap type="userdb" id="dbMap">
+       <result column="id" property="id"/>
+       <result column="reg_date" property="regDate"/>
+       <result column="list_id" property="listId"/>
+       <result column="no" property="no"/>
+    </resultMap>
+    
+     <insert id="saveUserDate" parameterType="userdb">
+           insert into taro_user_db (
+               id,
+               no,
+               list_id
+           ) values (
+             #{id},
+             #{no},
+             #{listId}
+           )
+     </insert>
+     
+<!--      <select id="loadUserDate" parameterType="userdb" resultMap="dbMap"> -->
+<!--      	select * -->
+<!--      	  from taro_user_db -->
+<!--      	 where id = #{id}  -->
+<!--      	   and reg_date = #{reg_date} -->
+<!--      </select> -->
+
+</mapper>

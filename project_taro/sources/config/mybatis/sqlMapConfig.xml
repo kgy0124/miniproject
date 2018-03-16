@@ -9,6 +9,7 @@
 	<typeAliases>
 		<typeAlias alias="user" type="kr.co.taro.domain.TaroUser" />
 		<typeAlias alias="card" type="kr.co.taro.domain.TaroCard" />
+		<typeAlias alias="userdb" type="kr.co.taro.domain.TaroUserDb" />
 	</typeAliases>
 	
 	<environments default="development">
@@ -26,5 +27,6 @@
 	<mappers>
 		<mapper resource="config/sqlmap/oracle/tarouser.xml"/>
 		<mapper resource="config/sqlmap/oracle/tarocard.xml"/>
+		<mapper resource="config/sqlmap/oracle/tarodb.xml"/>
 	</mappers>
 </configuration>

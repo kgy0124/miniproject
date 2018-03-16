@@ -7,6 +7,8 @@ import kr.co.taro.domain.TaroCard;
 import kr.co.taro.domain.TaroUser;
 
 public class RealTaroViewUI extends BaseUI{
+	private TaroCard cardResult = null;
+	
 	public void service() { 
 		TaroUser ts = new TaroUser(); 
 		System.out.println(">> 타로를 진행 하겠습니다 <<");
@@ -78,6 +80,7 @@ public class RealTaroViewUI extends BaseUI{
 		Collections.shuffle(list);
 		
 		TaroCard resultnum = list.get(cardnum-1);
+		
 		try {
 			System.out.println("\n>> 카드명 : " + resultnum.getCardName());
 			Thread.sleep(1500);
@@ -90,5 +93,11 @@ public class RealTaroViewUI extends BaseUI{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		cardResult = resultnum;
+	}
+	
+	public TaroCard loadCard() {
+		return cardResult;
 	}
 }

@@ -3,21 +3,21 @@ package kr.co.taro.ui;
 import java.util.Scanner;
 
 import kr.co.taro.detailedUI.LogOut;
-import kr.co.taro.log.ui.TaroMemberLoginUI;
+import kr.co.taro.detailedUI.LoginCheck;
+import kr.co.taro.detailedviewUI.TaroSaveUI;
 
 public class TaroViewUI extends BaseUI {
 	private Scanner sc = new Scanner(System.in);
 	
 	public void service() {
-		BaseUI ui = null;
-		TaroUI.usertmp = null;
+		BaseUI ui = null;		
 		while(true) {
 			switch(menu()) {
 			case 1:if(TaroUI.usertmp==null)
-				 ui=new TaroMemberLoginUI();
-			else ui=new LogOut();break;
-			case 2:
-			case 3:
+				   ui=new LoginCheck();
+				   else ui=new LogOut();break;
+			case 2:break;
+			case 3:new TaroSaveUI().service();break;
 			case 0: return;
 			}
 			ui.service();
