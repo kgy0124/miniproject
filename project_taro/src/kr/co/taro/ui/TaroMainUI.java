@@ -29,12 +29,14 @@ public class TaroMainUI {
 	
 	public void quit() {
 		try {
-			System.out.println("\n>> 타로는 순전히 재미로만 보시는 것을 권해 드려요~ <<");
+			System.out.println("==================================================================");
+			System.out.println(">>           타로는 순전히 재미로만 보시는 것을 권해 드려요~                    <<");
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println(">> 타로 프로그램을 종료합니다. <<");
+		System.out.println(">>                   타로 프로그램을 종료합니다                                                         <<");
+		System.out.println("==================================================================");
 		System.exit(0);
 	}
 }
