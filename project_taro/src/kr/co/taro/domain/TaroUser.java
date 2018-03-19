@@ -9,16 +9,6 @@ public class TaroUser {
 	    private String birth;
 	    // 비밀번호 
 	    private String password;
-	    
-	    private int status;
-
-	    public int getStatus() {
-			return status;
-		}
-
-		public void setStatus(int status) {
-			this.status = status;
-		}
 
 		public String getId() {
 	        return id;
