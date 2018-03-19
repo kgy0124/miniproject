@@ -8,7 +8,7 @@ public class TaroMainUI {
 	public int menu() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("==================================================================");
-		System.out.println("|                        [TAMA 타로 프로그램]                       |");
+		System.out.println("|                        [TAMA 타로 프로그램]                        |");
 		System.out.println("==================================================================");
 		System.out.println("| 1. TAMA 회원 등록                                                                                                            |");
 		System.out.println("------------------------------------------------------------------");
