@@ -3,7 +3,6 @@ package kr.co.taro.ui;
 import org.apache.ibatis.session.SqlSession;
 
 import common.db.MyAppConfig;
-import kr.co.taro.dao.TaroDAO;
 import kr.co.taro.domain.TaroUser;
 import kr.co.taro.mapper.TaroCardMapper;
 import kr.co.taro.mapper.TaroUserDbMapper;
@@ -15,7 +14,6 @@ public class TaroUI {
     public static TaroCardMapper cardMapper;
     public static TaroUserDbMapper dbMapper;
     public static TaroUser usertmp = new TaroUser();
-    public static TaroDAO dao = new TaroDAO();
     public TaroUI() {
 		SqlSession sql = MyAppConfig.getSqlSessionInstance();
 		userMapper = sql.getMapper(TaroUserMapper.class);

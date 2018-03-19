@@ -10,7 +10,7 @@ public class TaroPasswordCheckUI extends BaseUI{
 			String password = getStr(">> 생성하실 비밀번호를 입력해주세요 : ");
 			String respass = getStr(">> 비밀번호 재확인 : ");
 			
-			boolean result = TaroUI.dao.passwordResult(password, respass);
+			boolean result = passwordResult(password, respass);
 			
 			if(result) {
 				TaroUI.usertmp.setPassword(password);

@@ -18,7 +18,7 @@ public class TaroBirthCheckUI extends TaroUserRegistUI{
 				}
 			}
 			System.out.println();
-			boolean result = TaroUI.dao.birthResult(birth);
+			boolean result = birthResult(birth);
 			if(result) {
 				TaroUI.usertmp.setBirth(birth);
 				return;

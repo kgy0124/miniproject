@@ -13,7 +13,7 @@ public class TaroNonViewUI extends BaseUI{
 		while(true) {
 			
 			String yn ="";
-			yn = getStr(">> 타로운세 보기를 시작하시겠습니까 ( Y : 타로보기 / N : 메뉴로 돌아가기 ) : ");
+			yn = getStr("\n>> 타로운세 보기를 시작하시겠습니까 ( Y : 타로보기 / N : 메뉴로 돌아가기 ) : ");
 			
 			if(yn.equalsIgnoreCase("N")) {
 				System.out.print("\n>> 메뉴로 돌아갑니다");

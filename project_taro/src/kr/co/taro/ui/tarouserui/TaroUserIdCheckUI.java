@@ -18,7 +18,7 @@ public class TaroUserIdCheckUI extends BaseUI {
 				}
 			}
 			System.out.println();
-			boolean result = TaroUI.dao.idCheck(userId);
+			boolean result = idCheck(userId);
 			
 			if(result) {
 				System.out.println(".......................................");
