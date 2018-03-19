@@ -12,17 +12,17 @@ public class TaroLoadUI extends BaseUI{
 	public void service() {
 		if(TaroUI.usertmp.getId() == null) {
 			System.out.println("------------------------------------------------------------------");
-			System.out.println("회원만 이용할 수 있는 메뉴입니다. 로그인 후 사용해주세요!");
+			System.out.println("              회원만 이용할 수 있는 메뉴입니다. 로그인 후 사용해주세요!              ");
 			return;
 		}
 		
 		System.out.println("==================================================================");
-		System.out.println("                    [저장된 운세 기록 보기]                         ");
+		System.out.println("                       [저장된 운세 기록 보기]                           ");
 		System.out.println("------------------------------------------------------------------");
 		while(true) {
 			
 			String yn ="";
-			yn = getStr(">> 저장된 운세를  다시 보겠습니까 ( Y : 보기 / N : 메뉴로 돌아가기 ) : ");
+			yn = getStr("\n>> 저장된 운세를  다시 보겠습니까 ( Y : 보기 / N : 메뉴로 돌아가기 ) : ");
 			
 			if(yn.equalsIgnoreCase("N")) {
 				System.out.print("\n>> 메뉴로 돌아갑니다");
@@ -42,7 +42,7 @@ public class TaroLoadUI extends BaseUI{
 				List<TaroUserDb> hlist=TaroUI.dbMapper.loadHealthDate(TaroUI.usertmp.getId());
 				
 				System.out.println("==================================================================");
-				System.out.println(">> "+TaroUI.usertmp.getId()+"님의 이전 기록을 불러오겠습니다.");
+				System.out.println(">> ["+TaroUI.usertmp.getId()+"]님의 이전 타로운세 기록 <<");
 				System.out.println("------------------------------------------------------------------");
 				System.out.print("기록을 불러오는 중");
 				
@@ -54,27 +54,26 @@ public class TaroLoadUI extends BaseUI{
 						e.printStackTrace();
 					}
 				}
-				System.out.println("");
-				System.out.println("------------------------------------------------------------------");
-				System.out.printf("총 %d개의 기록이 조회됩니다.\n",llist.size()+mlist.size()+hlist.size());
+				System.out.println("\n");
+				System.out.printf("총 [%d]개의 타로운세의 기록이 조회 되었습니다 \n",llist.size()+mlist.size()+hlist.size());
 				System.out.println("------------------------------------------------------------------");
 				
 				for(TaroUserDb db:llist) {
-					System.out.printf("%02d번 카드||",db.getNo());
-					System.out.print(db.getListId()+"||");
-					System.out.print(db.getCard().getCardName()+"||");
+					System.out.printf("%02d번 카드  ||  ",db.getNo());
+					System.out.print(db.getListId()+" ||  ");
+					System.out.print(db.getCard().getCardName()+"  ||  ");
 					System.out.println(db.getCard().getDetailM());
 				}
 				for(TaroUserDb db:mlist) {
-					System.out.printf("%02d번 카드||",db.getNo());
-					System.out.print(db.getListId()+"||");
-					System.out.print(db.getCard().getCardName()+"||");
+					System.out.printf("%02d번 카드  ||  ",db.getNo());
+					System.out.print(db.getListId()+" ||  ");
+					System.out.print(db.getCard().getCardName()+"  ||  ");
 					System.out.println(db.getCard().getDetailM());
 				}
 				for(TaroUserDb db:hlist) {
-					System.out.printf("%02d번 카드||",db.getNo());
-					System.out.print(db.getListId()+"||");
-					System.out.print(db.getCard().getCardName()+"||");
+					System.out.printf("%02d번 카드  ||  ",db.getNo());
+					System.out.print(db.getListId()+" ||  ");
+					System.out.print(db.getCard().getCardName()+"  ||  ");
 					System.out.println(db.getCard().getDetailM());
 				}
 				System.out.println("------------------------------------------------------------------");
