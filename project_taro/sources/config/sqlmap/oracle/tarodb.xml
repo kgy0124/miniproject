@@ -8,7 +8,16 @@
        <result column="reg_date" property="regDate"/>
        <result column="list_id" property="listId"/>
        <result column="no" property="no"/>
+     <association property="card" column="no" javaType="card" resultMap="cardMap"/>
     </resultMap>
+    
+    <resultMap type="card" id="cardMap">
+       <result column="list_id" property="listId"/>
+	   <result column="no" property="no"/>
+	   <result column="card_name" property="cardName"/>
+	   <result column="basic_m" property="basicM"/>
+	   <result column="detail_m" property="detailM"/>
+    </resultMap> 
     
      <insert id="saveUserDate" parameterType="userdb">
            insert into taro_user_db (
@@ -22,11 +31,28 @@
            )
      </insert>
      
-<!--      <select id="loadUserDate" parameterType="userdb" resultMap="dbMap"> -->
-<!--      	select * -->
-<!--      	  from taro_user_db -->
-<!--      	 where id = #{id}  -->
-<!--      	   and reg_date = #{reg_date} -->
-<!--      </select> -->
+     <select id="loadLoveDate" parameterType="string" resultMap="dbMap">
+     	select d.id,d.no,d.reg_date,l.LIST_ID,l.CARD_NAME,l.detail_m,l.card_name
+          from taro_user_db d inner join taro_love l
+            on d.no = l.no
+           and d.list_id=l.list_id
+      where id = #{id}
+     </select>
+     
+     <select id="loadMoneyDate" parameterType="string" resultMap="dbMap">
+     	select d.id,d.no,d.reg_date,m.LIST_ID,m.CARD_NAME,m.detail_m,m.card_name
+          from taro_user_db d inner join taro_money m
+            on d.no = m.no
+           and d.list_id=m.list_id
+      where id = #{id}
+     </select>
+     
+     <select id="loadHealthDate" parameterType="string" resultMap="dbMap">
+     	select d.id,d.no,d.reg_date,h.LIST_ID,h.CARD_NAME,h.detail_m,h.card_name
+          from taro_user_db d inner join taro_health h
+            on d.no = h.no
+           and d.list_id=h.list_id
+      where id = #{id}
+     </select>
 
 </mapper>

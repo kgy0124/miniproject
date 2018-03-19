@@ -1,6 +1,7 @@
 package kr.co.taro.domain;
 
 import java.util.Date;
+import java.util.List;
 
 //이전운세 저장테이블 
 public class TaroUserDb {
@@ -16,6 +17,17 @@ public class TaroUserDb {
  
  // 카드 번호
  private int no;
+ 
+//카드 객체
+ private TaroCard card;
+
+public TaroCard getCard() {
+	return card;
+}
+
+public void setCard(TaroCard card) {
+	this.card = card;
+}
 
 public String getId() {
 	return id;

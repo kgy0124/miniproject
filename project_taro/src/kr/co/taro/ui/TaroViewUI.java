@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import kr.co.taro.detailedUI.LogOut;
 import kr.co.taro.detailedUI.LoginCheck;
+import kr.co.taro.detailedviewUI.TaroLoadUI;
 import kr.co.taro.detailedviewUI.TaroSaveUI;
 
 public class TaroViewUI extends BaseUI {
@@ -16,7 +17,7 @@ public class TaroViewUI extends BaseUI {
 			case 1:if(TaroUI.usertmp.getId() == null)
 				   ui=new LoginCheck();
 				   else ui=new LogOut();break;
-			case 2:break;
+			case 2: ui = new TaroLoadUI(); break;
 			case 3: ui = new TaroSaveUI(); break;
 			case 0: return;
 			}

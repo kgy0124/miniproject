@@ -8,6 +8,11 @@ import kr.co.taro.ui.TaroUI;
 
 public class TaroSaveUI extends BaseUI{
 	public void service() {	
+		if(TaroUI.usertmp.getId() == null) {
+			System.out.println("------------------------------------------------------------------");
+			System.out.println("회원만 이용할 수 있는 메뉴입니다. 로그인 후 사용해주세요!");
+			return;
+		}
 		RealTaroViewUI viewui = new RealTaroViewUI();
 		viewui.service();
 		TaroCard tc = viewui.loadCard();
